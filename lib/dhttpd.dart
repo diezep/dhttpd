@@ -15,7 +15,7 @@ class Dhttpd {
 
   String get host => _server.address.host;
 
-  int get port => _server.port ?? int.parse(Platform.environment['PORT']) ;
+  int get port => _server.port;
 
   String get urlBase => 'http://$host:$port/';
 
@@ -40,7 +40,7 @@ class Dhttpd {
         .addMiddleware(logRequests())
         .addHandler(createStaticHandler(path, defaultDocument: 'index.html'));
 
-    final server = await io.serve(pipeline, address, port);
+    final server = await io.serve(pipeline, address, int.parse(Platform.environment['PORT']) ?? port);
     return Dhttpd._(server, path);
   }
 
