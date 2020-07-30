@@ -4,7 +4,7 @@ part 'options.g.dart';
 
 String get usage => _$parserForOptions.usage;
 
-const int defaultPort = 8080;
+const int defaultPort =  Platform.environment['PORT'] ?? 8080;
 const String defaultHost = 'localhost';
 
 @CliOptions()
@@ -12,7 +12,7 @@ class Options {
   @CliOption(
       abbr: 'p',
       valueHelp: 'port',
-      defaultsTo: Platform.environment['PORT'] ?? defaultPort,
+      defaultsTo: defaultPort,
       help: 'The port to listen on.')
   final int port;
 
