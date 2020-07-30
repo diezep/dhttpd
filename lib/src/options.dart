@@ -1,5 +1,5 @@
 import 'package:build_cli_annotations/build_cli_annotations.dart';
-
+import 'dart:io'
 part 'options.g.dart';
 
 String get usage => _$parserForOptions.usage;
@@ -12,7 +12,7 @@ class Options {
   @CliOption(
       abbr: 'p',
       valueHelp: 'port',
-      defaultsTo: defaultPort,
+      defaultsTo: Platform.environment['PORT'] ?? defaultPort,
       help: 'The port to listen on.')
   final int port;
 
