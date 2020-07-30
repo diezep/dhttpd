@@ -1,5 +1,5 @@
 import 'package:build_cli_annotations/build_cli_annotations.dart';
-import 'dart:io'
+import 'dart:io';
 part 'options.g.dart';
 
 String get usage => _$parserForOptions.usage;
