@@ -15,7 +15,7 @@ class Dhttpd {
 
   String get host => _server.address.host;
 
-  int get port => _server.port;
+  int get port => _server.port ?? int.parse(Platform.environment['PORT']) ;
 
   String get urlBase => 'http://$host:$port/';
 
