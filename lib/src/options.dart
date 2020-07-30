@@ -1,10 +1,9 @@
 import 'package:build_cli_annotations/build_cli_annotations.dart';
-import 'dart:io';
 part 'options.g.dart';
 
 String get usage => _$parserForOptions.usage;
 
-int defaultPort =  Platform.environment['PORT'] ?? 8080;
+int defaultPort = 8080;
 const String defaultHost = 'localhost';
 
 @CliOptions()
