@@ -40,7 +40,7 @@ class Dhttpd {
         .addMiddleware(logRequests())
         .addHandler(createStaticHandler(path, defaultDocument: 'index.html'));
 
-    final server = await io.serve(pipeline, address, int.parse(Platform.environment['PORT']) ?? port);
+    final server = await io.serve(pipeline, address, port);
     return Dhttpd._(server, path);
   }
 
