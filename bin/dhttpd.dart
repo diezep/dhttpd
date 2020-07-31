@@ -19,7 +19,7 @@ Future<void> main(List<String> args) async {
     return;
   }
   
-  await Dhttpd.start(path: options.path, port:int.parse(Platform.environment['PORT']), address: options.host);
+  await Dhttpd.start(path: options.path, port:int.parse(Platform.environment['PORT']), address: '0.0.0.0');
 
   print('Server started on port ${int.parse(Platform.environment['PORT'])}');
 }
