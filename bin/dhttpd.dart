@@ -21,7 +21,7 @@ Future<void> main(List<String> args) async {
   
   
   final herokuPort = int.tryParse(Platform.environment['PORT']);
-  final herokuAdress = "0.0.0.0";
+  const herokuAdress = '0.0.0.0';
   
 
   await Dhttpd.start(path: options.path, port: herokuPort ?? 8080, address: herokuAdress);
